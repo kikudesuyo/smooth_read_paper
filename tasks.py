@@ -8,7 +8,7 @@ def run(c, filename):
     path = os.path.abspath(os.path.dirname(__file__))
     # Windows環境用のコマンド
     if os.name == "nt":
-        c.run(f'set "pythonpath=%PATH%;{path}" && python {filename}"')
+        c.run(f"set PYTHONPATH=%PYTHONPATH%;{path} & python {filename}")
     else:
         c.run(f'export PYTHONPATH="$PYTHONPATH:{path}" && python {filename}')
 
@@ -17,7 +17,7 @@ def run(c, filename):
 def test(c, filename):
     path = os.path.abspath(os.path.dirname(__file__))
     if os.name == "nt":
-        c.run(f'set "pythonpath=%PATH%;{path}" && python -m unittest {filename}"')
+        c.run(f"set PYTHONPATH=%PYTHONPATH%;{path} & python -m unittest {filename}")
     else:
         c.run(
             f'export PYTHONPATH="$PYTHONPATH:{path}" && python -m unittest {filename}'
@@ -33,6 +33,6 @@ def test_all(c):
     """
     path = os.path.abspath(os.path.dirname(__file__))
     if os.name == "nt":
-        c.run(f'set "pythonpath=%PATH%;{path}" && python -m unittest')
+        c.run(f"set PYTHONPATH=%PYTHONPATH%;{path} & python -m unittest discover")
     else:
         c.run(f'export PYTHONPATH="$PYTHONPATH:{path}" && python -m unittest')

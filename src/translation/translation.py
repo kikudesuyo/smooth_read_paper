@@ -48,8 +48,6 @@ def translate_text(text: str, source_lang: str, target_lang: str) -> str:
         "TURNISH": "tr",
         "UKRAINIAN": "uk",
         "CHINESE": "zh",
-
-
     """
     translator = deepl.Translator(DEEPL_API_KEY)
     result = translator.translate_text(
@@ -59,6 +57,6 @@ def translate_text(text: str, source_lang: str, target_lang: str) -> str:
 
 
 text = "경마에서 우승해서 다행입니다!"
-translated_text = translate_text(text, "KO", "ja")
+translated_text = translate_text(text, "KO", "fr")
 with open(generate_abs_path("/data/translation.txt"), mode="w", encoding="utf-8") as f:
     f.write(translated_text)
