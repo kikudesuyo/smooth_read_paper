@@ -43,14 +43,31 @@ def translate_into_japanese(japanese_text):
 
     path = os.path.abspath(os.path.dirname(__file__))
     sys.path.append(path)
-    from src.translation.translation import translate_text
+    from src.translation.translation import translate_into_japanese
 
-    english_text = translate_text(japanese_text, "ja", "en-GB")
+    english_text = translate_into_japanese(japanese_text)
     return english_text
 
 
 @task
-def commit(c, type, message):
+def feat(c, japanese_message):
+    """Commit with feat:
+    Args:
+        japanese_message (str): to commit in Japanese
+    Caution:
+        japanese_message must be enclosed in double quotes.
+    """
+    english_text = translate_into_japanese(japanese_message)
+    c.run(f'git commit -m "feat: {english_text}"')
+
+
+@task
+def refactor(c, message):
+    """Commit with refactor:
+    Args:
+        message (str): to commit in Japanese
+    Caution:
+        message must be enclosed in double quotes.
+    """
     english_text = translate_into_japanese(message)
-    print(english_text)
-    c.run(f'git commit -m "{type}: {english_text}"')
+    c.run(f'git commit -m "refactor: {english_text}"')

@@ -1,7 +1,6 @@
 import deepl
 
 from src.constant.api_key import DEEPL_API_KEY
-from src.util import generate_abs_path
 
 
 def translate_text(text: str, source_lang: str, target_lang: str) -> str:
@@ -56,7 +55,12 @@ def translate_text(text: str, source_lang: str, target_lang: str) -> str:
     return result.text
 
 
-text = "경마에서 우승해서 다행입니다!"
-translated_text = translate_text(text, "KO", "fr")
-with open(generate_abs_path("/data/translation.txt"), mode="w", encoding="utf-8") as f:
-    f.write(translated_text)
+def translate_into_japanese(japanese_text: str) -> str:
+    """Translate text into Japanese
+    Args:
+        japanese_text (str): text to translate
+    Returns:
+        str: translated text
+    """
+    english_text = translate_text(japanese_text, "ja", "en-US")
+    return english_text
