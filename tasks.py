@@ -50,6 +50,7 @@ def translate_into_japanese(japanese_text):
 
 
 @task
-def commit(c, message):
-    japanese_text = translate_into_japanese(message)
-    c.run(f"git commit -m '{japanese_text}'")
+def commit(c, type, message):
+    english_text = translate_into_japanese(message)
+    print(english_text)
+    c.run(f'git commit -m "{type}: {english_text}"')
