@@ -17,14 +17,14 @@ source .venv/Scripts/activate
 
 ```
 pip install -r requirements.txt
-requirements.txt
+```
 
 ## How to run
+
 Use the following command to use invoke.
-```
 
+```
 inv run filename
+```
 
-```
 Note that non-English print statements are garbled in Windows environment.
-```
