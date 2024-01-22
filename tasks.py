@@ -72,3 +72,4 @@ def refactor(c, message):
     """
     english_text = translate_into_japanese(message)
     c.run(f'git commit -m "refactor: {english_text}"')
+    c.run("git push")
