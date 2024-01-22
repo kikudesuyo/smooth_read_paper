@@ -59,6 +59,7 @@ def feat(c, japanese_message):
     """
     english_text = translate_into_japanese(japanese_message)
     c.run(f'git commit -m "feat: {english_text}"')
+    c.run("git push")
 
 
 @task
