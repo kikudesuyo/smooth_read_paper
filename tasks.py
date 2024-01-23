@@ -50,7 +50,13 @@ def translate_into_japanese(japanese_text):
 
 
 @task
-def feat(c, japanese_message):
+def aa(c):
+    """Add all files"""
+    c.run("git add -A")
+
+
+@task
+def cfe(c, japanese_message):
     """Commit with feat:
     Args:
         japanese_message (str): to commit in Japanese
@@ -63,13 +69,26 @@ def feat(c, japanese_message):
 
 
 @task
-def refactor(c, message):
+def cfi(c, japanese_message):
+    """Commit with fix:
+    Args:
+        japanese_message (str): to commit in Japanese
+    Caution:
+        japanese_message must be enclosed in double quotes.
+    """
+    english_text = translate_into_japanese(japanese_message)
+    c.run(f'git commit -m "fix: {english_text}"')
+    c.run("git push")
+
+
+@task
+def cr(c, japanese_message):
     """Commit with refactor:
     Args:
-        message (str): to commit in Japanese
+        japanese_message (str): to commit in Japanese
     Caution:
-        message must be enclosed in double quotes.
+        japanese_message must be enclosed in double quotes.
     """
-    english_text = translate_into_japanese(message)
+    english_text = translate_into_japanese(japanese_message)
     c.run(f'git commit -m "refactor: {english_text}"')
     c.run("git push")
