@@ -43,9 +43,9 @@ def translate_into_japanese(japanese_text):
 
     path = os.path.abspath(os.path.dirname(__file__))
     sys.path.append(path)
-    from src.translation.translation import translate_into_japanese
+    from src.translation.translation import translate_into_english
 
-    english_text = translate_into_japanese(japanese_text)
+    english_text = translate_into_english(japanese_text)
     return english_text
 
 
