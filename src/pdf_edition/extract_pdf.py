@@ -18,7 +18,7 @@ def output_english_pdf(pdf_path, output_path_dir):
     for i in range(page_length):
         text = pdf_data.extract_text(i)
         japanese_text = translate_text(text, "en", "ja")
-        with open(f"{output_path_dir}/text{i}.txt", mode="w") as f:
+        with open(f"{output_path_dir}/text{i}.txt", mode="w", encoding="utf-8") as f:
             f.write(japanese_text)
 
 
@@ -33,9 +33,9 @@ def text_to_pdf(text_file, pdf_file):
     pdf_file.save()
 
 
-text_to_pdf(generate_abs_path("/data/text/text0.txt"), generate_abs_path("/data/a.pdf"))
+# text_to_pdf(generate_abs_path("/data/text/text0.txt"), generate_abs_path("/data/a.pdf"))
 
 
-# output_english_pdf(
-#     generate_abs_path("/pdf/EEindex_論文.pdf"), generate_abs_path("/data/text")
-# )
+output_english_pdf(
+    generate_abs_path("/pdf/EEindex.pdf"), generate_abs_path("/data/text")
+)

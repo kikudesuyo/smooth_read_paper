@@ -1,4 +1,5 @@
 certifi==2023.11.17
+chardet==5.2.0
 charset-normalizer==3.3.2
 deepl==1.16.1
 idna==3.6
@@ -9,5 +10,6 @@ PyMuPDF==1.23.16
 PyMuPDFb==1.23.9
 pypdf==3.17.4
 pytesseract==0.3.10
+reportlab==4.0.9
 requests==2.31.0
 urllib3==2.1.0
