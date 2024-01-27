@@ -55,7 +55,7 @@ def translate_text(text: str, source_lang: str, target_lang: str) -> str:
     return result.text
 
 
-def translate_into_japanese(japanese_text: str) -> str:
+def translate_into_english(japanese_text: str) -> str:
     """Translate text into Japanese
     Args:
         japanese_text (str): text to translate

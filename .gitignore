@@ -164,5 +164,8 @@ cython_debug/
 
 #API keys
 src/constant/api_key.py
-data
+
+
+/data/*
+!/data/translation/
 pdf/
