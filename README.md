@@ -10,7 +10,12 @@ https://auto-worker.com/blog/?p=5030
 
 The obtained API key should be listed in src/constant/api_key.py.
 
-The constant name is DEEPL_API_KEY. (Example): DEEPL_API_KEY = your_api_key
+The constant name is DEEPL_API_KEY.
+(Example):
+
+```
+DEEPL_API_KEY = your_api_key
+```
 
 ## Enabling virtual environments.
 
