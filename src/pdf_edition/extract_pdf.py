@@ -33,9 +33,6 @@ def text_to_pdf(text_file, pdf_file):
     pdf_file.save()
 
 
-# text_to_pdf(generate_abs_path("/data/text/text0.txt"), generate_abs_path("/data/a.pdf"))
-
-
-output_english_pdf(
-    generate_abs_path("/pdf/EEindex.pdf"), generate_abs_path("/data/text")
-)
+# Input: pdf file path
+your_pdf_file = generate_abs_path("/pdf/your_pdf_file")
+output_english_pdf(your_pdf_file, generate_abs_path("/data/translation"))
