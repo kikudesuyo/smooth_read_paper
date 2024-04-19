@@ -56,11 +56,11 @@ def translate_text(text: str, source_lang: str, target_lang: str) -> str:
 
 
 def translate_into_english(japanese_text: str) -> str:
-    """Translate text into Japanese
+    """Translate japanese text into english text
     Args:
         japanese_text (str): text to translate
     Returns:
-        str: translated text
+        english_text (str): translated text
     """
     english_text = translate_text(japanese_text, "ja", "en-US")
     return english_text

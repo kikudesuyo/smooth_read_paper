@@ -52,4 +52,4 @@ inv run filename
 
 Note: that non-English print statements are garbled in Windows environment.
 
-PS: This README.md has been translated into English using a translation function I created. (LOL)
+P.S.: This README.md has been translated into English using a translation function I created. (LOL)
